@@ -1,0 +1,81 @@
+site_name: Oficina de Sistemas Embarcados
+site_description: Semana Universitária 2026
+site_url: https://luizfaria1989.github.io/introducao-aos-sistemas-embarcados/
+repo_url: https://github.com/luizfaria1989/introducao-aos-sistemas-embarcados
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: pt-BR
+  # "custom" faz o Material NÃO aplicar nenhuma cor pronta; as cores vêm
+  # de docs/stylesheets/extra.css (paleta azul e verde).
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-night, name: Modo escuro }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-sunny, name: Modo claro }
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.instant
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["docs/codigo"]
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search:
+      lang: pt
+  - awesome-nav
+  - glightbox
+  - git-revision-date-localized:
+      locale: pt
+      type: date
+  - minify:
+      minify_html: true
+  # print-site deve ser sempre o ÚLTIMO plugin, para que a página de
+  # impressão inclua as alterações feitas pelos plugins anteriores.
+  - print-site
+
+extra_css:
+  - stylesheets/extra.css

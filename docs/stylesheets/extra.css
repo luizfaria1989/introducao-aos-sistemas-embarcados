@@ -1,0 +1,86 @@
+/* ------------------------------------------------------------------
+   Paleta institucional — azul e verde (inspirada na identidade da UnB)
+
+   ATENÇÃO: os valores abaixo são uma aproximação visual, NÃO foram
+   conferidos contra o manual de identidade visual oficial da UnB.
+   Se for publicar em nome da universidade, troque os hex desta seção
+   pelos códigos oficiais — o resto do arquivo continua funcionando.
+   ------------------------------------------------------------------ */
+
+:root {
+  --unb-azul: #003d7c;
+  --unb-azul-claro: #2a6cb0;
+  --unb-azul-escuro: #002b57;
+
+  --unb-verde: #00874a;
+  --unb-verde-claro: #16a862;
+  --unb-verde-escuro: #006034;
+}
+
+/* Cor primária: barra de topo, abas e barra lateral ativa */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--unb-azul);
+  --md-primary-fg-color--light: var(--unb-azul-claro);
+  --md-primary-fg-color--dark: var(--unb-azul-escuro);
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+}
+
+/* Cor de destaque: links em hover, foco, botões secundários */
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--unb-verde);
+  --md-accent-fg-color--transparent: #00874a1a;
+  --md-accent-bg-color: #ffffff;
+  --md-accent-bg-color--light: #ffffffb3;
+}
+
+/* --- Modo claro ---------------------------------------------------- */
+
+[data-md-color-scheme="default"] {
+  --md-typeset-a-color: var(--unb-azul);
+}
+
+/* --- Modo escuro --------------------------------------------------- */
+/* O azul institucional não tem contraste suficiente sobre fundo escuro,
+   então links e destaques usam as variantes claras.                    */
+
+[data-md-color-scheme="slate"] {
+  --md-typeset-a-color: #6ba6e0;
+}
+
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--unb-verde-claro);
+  --md-accent-fg-color--transparent: #16a8621f;
+}
+
+/* --- Detalhes visuais ---------------------------------------------- */
+
+/* Filete verde separando o cabeçalho azul do conteúdo */
+.md-tabs {
+  border-bottom: 3px solid var(--unb-verde);
+}
+
+/* Em telas estreitas as abas somem; o filete passa para o cabeçalho */
+@media screen and (max-width: 76.1875em) {
+  .md-header {
+    border-bottom: 3px solid var(--unb-verde);
+  }
+}
+
+/* Título de página com um marcador verde à esquerda */
+.md-typeset h1 {
+  border-left: 4px solid var(--unb-verde);
+  padding-left: 0.6rem;
+  font-weight: 700;
+}
+
+/* Cartões da página inicial (grid cards) */
+.md-typeset .grid.cards > ul > li {
+  border-radius: 0.3rem;
+  transition: border-color 200ms, box-shadow 200ms;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--unb-verde);
+  box-shadow: 0 0 0 1px var(--unb-verde);
+}

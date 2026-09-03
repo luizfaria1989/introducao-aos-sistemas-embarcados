@@ -1,0 +1,12 @@
+# Ambiente virtual Python
+.venv/
+
+# Saída do build do MkDocs
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store

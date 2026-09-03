@@ -1,0 +1,6 @@
+# Ordem do menu principal (plugin awesome-nav).
+# Cada item aqui é um arquivo .md ou um DIRETÓRIO dentro de docs/.
+# Como o tema usa "navigation.tabs", cada item vira uma aba no topo do site.
+nav:
+  - index.md
+  - projetos

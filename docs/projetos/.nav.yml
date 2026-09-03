@@ -1,0 +1,6 @@
+# Título da seção no menu (sobrepõe o nome da pasta) e ordem dos projetos.
+title: Projetos
+nav:
+  - index.md
+  - 01-estacao-meteorologica
+  - 02-controle-acesso-rfid

@@ -1,0 +1,15 @@
+# Dependências da documentação (MkDocs).
+# Instalação:  python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+
+# Tema — já traz mkdocs, Jinja2, Markdown, Pygments e pymdown-extensions
+mkdocs-material==9.7.6
+
+# Extensões de Markdown usadas em markdown_extensions (pymdownx.*)
+pymdown-extensions==10.21.2
+
+# Plugins declarados em mkdocs.yml
+mkdocs-awesome-nav==3.3.0
+mkdocs-glightbox==0.5.2
+mkdocs-git-revision-date-localized-plugin==1.5.4
+mkdocs-print-site-plugin==2.8
+mkdocs-minify-plugin==0.8.0
