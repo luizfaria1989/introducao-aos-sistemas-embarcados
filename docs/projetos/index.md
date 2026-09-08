@@ -1,12 +1,10 @@
 # Projetos
 
-Os projetos são independentes e podem ser feitos em qualquer ordem, mas a
-sequência abaixo introduz os conceitos de forma gradual.
+Os projetos são independentes e podem ser feitos em qualquer ordem, mas a sequência abaixo introduz os conceitos de forma gradual.
 
 | # | Projeto | Conceitos | Duração |
 | --- | --- | --- | --- |
-| 1 | [Estação Meteorológica](01-estacao-meteorologica/index.md) | I²C, sensores, Wi-Fi | 90 min |
-| 2 | [Controle de Acesso RFID](02-controle-acesso-rfid/index.md) | SPI, interrupções, EEPROM | 120 min |
+| 1 | [Jogo da Memória](01-jogo-da-memoria/index.md) | conceitos | duracao |
 
 ## Como cada projeto está organizado
 
