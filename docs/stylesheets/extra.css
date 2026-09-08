@@ -1,35 +1,35 @@
 /* ------------------------------------------------------------------
-   Paleta institucional — azul e verde (inspirada na identidade da UnB)
+   Paleta da oficina — roxo e branco (tirada do cartaz da SEMUNI 2026)
 
-   ATENÇÃO: os valores abaixo são uma aproximação visual, NÃO foram
-   conferidos contra o manual de identidade visual oficial da UnB.
-   Se for publicar em nome da universidade, troque os hex desta seção
-   pelos códigos oficiais — o resto do arquivo continua funcionando.
+   ATENÇÃO: os hex abaixo foram amostrados visualmente do cartaz de
+   divulgação, não vieram de um manual de identidade. Se o cartaz for
+   refeito, basta trocar os valores desta seção — o resto do arquivo
+   continua funcionando.
    ------------------------------------------------------------------ */
 
 :root {
-  --unb-azul: #003d7c;
-  --unb-azul-claro: #2a6cb0;
-  --unb-azul-escuro: #002b57;
+  --ofi-roxo: #4a2a8c;         /* roxo dos títulos e das tarjas       */
+  --ofi-roxo-claro: #6d4bc4;
+  --ofi-roxo-escuro: #2e1a63;  /* fundo escuro do cartaz              */
 
-  --unb-verde: #00874a;
-  --unb-verde-claro: #16a862;
-  --unb-verde-escuro: #006034;
+  --ofi-lavanda: #8b6fe0;      /* roxo claro dos ícones e detalhes    */
+  --ofi-lavanda-clara: #b9a3f0;
+  --ofi-lilas: #f2effc;        /* quase branco, fundo dos cartões     */
 }
 
 /* Cor primária: barra de topo, abas e barra lateral ativa */
 [data-md-color-primary="custom"] {
-  --md-primary-fg-color: var(--unb-azul);
-  --md-primary-fg-color--light: var(--unb-azul-claro);
-  --md-primary-fg-color--dark: var(--unb-azul-escuro);
+  --md-primary-fg-color: var(--ofi-roxo);
+  --md-primary-fg-color--light: var(--ofi-roxo-claro);
+  --md-primary-fg-color--dark: var(--ofi-roxo-escuro);
   --md-primary-bg-color: #ffffff;
   --md-primary-bg-color--light: #ffffffb3;
 }
 
 /* Cor de destaque: links em hover, foco, botões secundários */
 [data-md-color-accent="custom"] {
-  --md-accent-fg-color: var(--unb-verde);
-  --md-accent-fg-color--transparent: #00874a1a;
+  --md-accent-fg-color: var(--ofi-lavanda);
+  --md-accent-fg-color--transparent: #8b6fe01a;
   --md-accent-bg-color: #ffffff;
   --md-accent-bg-color--light: #ffffffb3;
 }
@@ -37,39 +37,39 @@
 /* --- Modo claro ---------------------------------------------------- */
 
 [data-md-color-scheme="default"] {
-  --md-typeset-a-color: var(--unb-azul);
+  --md-typeset-a-color: var(--ofi-roxo);
 }
 
 /* --- Modo escuro --------------------------------------------------- */
-/* O azul institucional não tem contraste suficiente sobre fundo escuro,
-   então links e destaques usam as variantes claras.                    */
+/* O roxo escuro não tem contraste suficiente sobre fundo escuro, então
+   links e destaques usam as variantes lavanda.                        */
 
 [data-md-color-scheme="slate"] {
-  --md-typeset-a-color: #6ba6e0;
+  --md-typeset-a-color: var(--ofi-lavanda-clara);
 }
 
 [data-md-color-scheme="slate"][data-md-color-accent="custom"] {
-  --md-accent-fg-color: var(--unb-verde-claro);
-  --md-accent-fg-color--transparent: #16a8621f;
+  --md-accent-fg-color: var(--ofi-lavanda-clara);
+  --md-accent-fg-color--transparent: #b9a3f01f;
 }
 
 /* --- Detalhes visuais ---------------------------------------------- */
 
-/* Filete verde separando o cabeçalho azul do conteúdo */
+/* Filete lavanda separando o cabeçalho roxo do conteúdo */
 .md-tabs {
-  border-bottom: 3px solid var(--unb-verde);
+  border-bottom: 3px solid var(--ofi-lavanda);
 }
 
 /* Em telas estreitas as abas somem; o filete passa para o cabeçalho */
 @media screen and (max-width: 76.1875em) {
   .md-header {
-    border-bottom: 3px solid var(--unb-verde);
+    border-bottom: 3px solid var(--ofi-lavanda);
   }
 }
 
-/* Título de página com um marcador verde à esquerda */
+/* Título de página com um marcador lavanda à esquerda */
 .md-typeset h1 {
-  border-left: 4px solid var(--unb-verde);
+  border-left: 4px solid var(--ofi-lavanda);
   padding-left: 0.6rem;
   font-weight: 700;
 }
@@ -81,6 +81,25 @@
 }
 
 .md-typeset .grid.cards > ul > li:hover {
-  border-color: var(--unb-verde);
-  box-shadow: 0 0 0 1px var(--unb-verde);
+  border-color: var(--ofi-lavanda);
+  box-shadow: 0 0 0 1px var(--ofi-lavanda);
+}
+
+/* No modo claro os cartões ganham o lilás quase branco do cartaz */
+[data-md-color-scheme="default"] .md-typeset .grid.cards > ul > li {
+  background-color: var(--ofi-lilas);
+  border-color: #e3dbf8;
+}
+
+/* Grade de cartões travada em 2 colunas (2x2), usada na seção "Equipe".
+   Sem esta regra o Material usa auto-fit e os 4 cartões viram uma linha
+   só em telas largas. Em telas estreitas volta a uma coluna.           */
+.md-typeset .grid.cards-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .grid.cards-2 {
+    grid-template-columns: 1fr;
+  }
 }
