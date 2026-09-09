@@ -5,6 +5,7 @@ Os projetos são independentes e podem ser feitos em qualquer ordem, mas a sequ�
 | # | Projeto | Conceitos | Duração |
 | --- | --- | --- | --- |
 | 1 | [Jogo da Memória](01-jogo-da-memoria/index.md) | conceitos | duracao |
+| 2 | [Radar Ultrassônico](02-radar-ultrassonico/index.md) | conceitos | duracao |
 
 ## Como cada projeto está organizado
 
