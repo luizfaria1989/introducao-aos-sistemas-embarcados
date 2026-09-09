@@ -103,3 +103,51 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Tabelas --------------------------------------------------------
+   Tabelas continuam sendo escritas como Markdown puro; o CSS abaixo só
+   estiliza o resultado (cabeçalho roxo, zebrado, hover). O seletor
+   :not([class]) evita pegar tabelas internas de outras extensões que
+   já vêm com classe própria.                                          */
+
+.md-typeset table:not([class]) {
+  border-collapse: collapse;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  margin: 1.5em 0;
+  display: table;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--ofi-roxo);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.75em 1em;
+  border: none;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: var(--ofi-lilas);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: var(--ofi-lavanda-clara);
+  transition: background-color 0.2s ease;
+}
+
+/* No modo escuro o lilás quase branco vira roxo bem translúcido, senão
+   o zebrado e o hover ficariam claros demais sobre o fundo escuro.     */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(139, 111, 224, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover {
+  background-color: rgba(139, 111, 224, 0.22);
+}
