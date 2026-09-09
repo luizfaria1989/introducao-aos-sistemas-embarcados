@@ -58,6 +58,14 @@ Espera-se, ainda, ampliar o contato da comunidade externa — em especial de est
 
     [:octicons-arrow-right-24: Ver projeto](projetos/01-jogo-da-memoria/index.md)
 
+-   :material-memory: **Radar Ultrassônico**
+
+    ---
+
+    (resumo)
+
+    [:octicons-arrow-right-24: Ver projeto](projetos/02-radar-ultrassonico/index.md)
+
 </div>
 
 ## Antes de começar
